@@ -1,48 +1,74 @@
-import { Text, View, FlatList, TouchableOpacity, ListRenderItem } from "react-native";
-import MessageCard from "../components/MessageCard";
+import { Text, View } from "react-native";
+import{SplashScreen} from "expo-router";
+import { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useParticipantStore } from "@/store/useParticipantStore";
+import { useChatStore } from "@/store/useChatStore";
 import { useRouter } from "expo-router";
-import type { Chat } from "../types";
-import { ScaledSheet } from "react-native-size-matters";
-const chats: Chat[] = [
-  { id: "1", name: "Santhosh", message: "Hello", time: "12:00", count: 1 },
-  { id: "2", name: "Alex", message: "Hey!", time: "11:45", count: 2 },
-];
 
+
+SplashScreen.preventAutoHideAsync();
 export default function Index() {
+
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
-  const renderItem: ListRenderItem<Chat> = ({ item }) => (
-    <TouchableOpacity onPress={() => router.push({ pathname: "/chatScreen", params: { chatId: item.id, name: item.name } })}>
-      <MessageCard name={item.name} message={item.message} time={item.time} count={item.count} />
-    </TouchableOpacity>
-  );
+  const initializeData = async () => {
+    console.debug('Initializing data');
+    try{
+      const [participantsResponse, messageResponse]  = await Promise.all([
+        fetch('https://dummy-chat-server.tribechat.com/api/participants/all'),
+         fetch('https://dummy-chat-server.tribechat.com/api/messages/all'),
+      ]);
+
+      const [participants, messages] = await Promise.all([
+        participantsResponse.json(),
+        messageResponse.json(), 
+      ]);
+      useParticipantStore.getState().setParticipants(participants);
+      useChatStore.getState().setMessages(messages);
+    }catch(error){
+      console.error('Error initializing data:', error);
+    }finally{
+      setIsLoading(false);
+    }
+  }
+  
+  const initializeApp = async () => {
+    console.debug('Initializing app');
+    try{
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      const response = await fetch('https://dummy-chat-server.tribechat.com/api/info')
+      const {sessionUuid, appVersion} = await response.json();
+
+      const storedSessionUuid = await AsyncStorage.getItem('sessionUuid');
+
+      if (storedSessionUuid !== sessionUuid){
+        console.debug('Session UUID mismatch, clearing storage');
+        await AsyncStorage.clear();
+        await AsyncStorage.setItem('sessionUuid', sessionUuid);
+        await initializeData();
+      }
+    }catch(error){
+      console.error('Error initializing app:', error);
+    }finally{
+      setIsLoading(false);
+      SplashScreen.hideAsync();
+  
+      router.replace('/chatScreen');
+    }
+  }
+
+  useEffect(()=>{
+    console.debug("👋 App is mounting");
+    initializeApp();
+  }, []); 
+
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={chats}
-        keyExtractor={(item) => item.id}
-        renderItem={renderItem}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
-      />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Splash screen</Text>
     </View>
   );
 }
-
-const styles = ScaledSheet.create({
-  container: {
-    flex: 1,
-    padding: '16@s',
-  },
-  titleContainer: {
-    alignItems: 'center',
-    marginBottom: '16@s',
-  },
-  title: {
-    fontSize: '24@s',
-    fontWeight: 'bold',
-  },
-  separator: {
-    height: '12@s'  ,
-  },
-});

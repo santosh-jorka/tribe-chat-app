@@ -2,31 +2,41 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import type { ChatMessageProps } from '../types';
 import { ScaledSheet } from 'react-native-size-matters';
+import { formatTime } from '@/utils/formatTime';
 
-const ReceiverMessage: React.FC<ChatMessageProps> = ({ avatarUrl, name, time, message, showAvatar = true }) => {
+const ReceiverMessage: React.FC<ChatMessageProps> = ({ message, participant, showHeader, groupedReactions }) => {
   // Add margin when there's no avatar to align with messages that have avatars
-  const bubbleMargin = { marginLeft: showAvatar ? 8 : 40 };
+  const bubbleMargin = { marginLeft: showHeader ? 8 : 40 };
   return (
     <View style={[styles.container, styles.leftContainer]}>
-      {showAvatar && (
+      {showHeader && (
         <Image
-          source={avatarUrl ? { uri: avatarUrl } : require('../assets/images/react-logo.png')}
+          source={participant.avatarUrl ? { uri: participant.avatarUrl } : require('../assets/images/react-logo.png')}
           style={styles.avatar}
         />
       )}
       <View style={[styles.messageBubble, styles.receivedMessage, styles.bubbleLeft, bubbleMargin]}>
-        {showAvatar && (
+        {showHeader && (
           <View style={styles.headerRow}>
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.time}>{time}</Text>
+            <Text style={styles.name}>{participant.name}</Text>
+            <Text style={styles.time}>{formatTime(message.sentAt)}</Text>
           </View>
         )}
-        {!showAvatar && (
+        {!showHeader && (
           <View style={styles.headerRow}>
-            <Text style={styles.time}>{time}</Text>
+            <Text style={styles.time}>{formatTime(message.sentAt)}</Text>
           </View>
         )}
-        {message && <Text style={styles.messageText}>{message}</Text>}
+        {message.text && <Text style={styles.messageText}>{message.text}</Text>}
+        {groupedReactions.length > 0 && (
+          <View style={styles.reactionRow}>
+            {groupedReactions.map(({ emoji, count }) => (
+              <Text key={emoji} style={styles.reaction}>
+                {emoji} {count > 1 ? `x${count}` : ""}
+              </Text>
+            ))}
+          </View>
+        )}
       </View>
     </View>
   );
