@@ -1,8 +1,8 @@
-import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
+import {create} from "zustand";
+import {persist, createJSONStorage} from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import type { TParticipant } from "../types";
+import type {TParticipant} from "../types";
 
 interface ParticipantStore {
     participants: Record<string, TParticipant>;
@@ -21,7 +21,7 @@ export const useParticipantStore = create<ParticipantStore>()(
                     mapped[p.uuid] = p;
                 });
                 set({participants: mapped});
-            },  
+            },
             updateParticipant: (updated) => {
                 set({
                     participants: {

@@ -9,12 +9,11 @@ import dummyMessages from "../dummyMessages.json";
 import {TMessage} from "@/types";
 
 
-
-SplashScreen.preventAutoHideAsync();
 export default function Index() {
 
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
+
 
   const initializeData = async () => {
     console.debug('Initializing data');
@@ -38,12 +37,10 @@ export default function Index() {
       setIsLoading(false);
     }
   }
-  
+
   const initializeApp = async () => {
     console.debug('Initializing app');
     try{
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
       const response = await fetch('https://dummy-chat-server.tribechat.com/api/info')
       const {sessionUuid, appVersion} = await response.json();
 
@@ -55,13 +52,13 @@ export default function Index() {
         await AsyncStorage.setItem('sessionUuid', sessionUuid);
         await initializeData();
       }
-      //await AsyncStorage.setItem('sessionUuid', "");
+     await AsyncStorage.setItem('sessionUuid', "");
     }catch(error){
       console.error('Error initializing app:', error);
     }finally{
       setIsLoading(false);
       SplashScreen.hideAsync();
-  
+
       router.replace('/chatScreen');
     }
   }
