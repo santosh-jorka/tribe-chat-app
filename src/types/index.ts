@@ -38,13 +38,21 @@ type TMessageJSON = Omit<TMessage, "replyToMessageUuid"> & {
   replyToMessage?: Omit<TMessage, "replyToMessageUuid">;
 };
 
+type Attachment = {
+  type: string;
+  url: string;
+  width: number;
+  height: number;
+};
+
 export interface ChatMessageProps {
   message: TMessage;
   participant: TParticipant;
   showHeader: boolean;
+  showDate: boolean;
   groupedReactions: { emoji: string; count: number }[];
 }
 
 
 
-export type { TMessage, TMessageAttachment, TReaction, TParticipant, TMessageJSON };
+export type { TMessage, TMessageAttachment, TReaction, TParticipant, TMessageJSON,Attachment };

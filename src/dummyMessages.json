@@ -1,58 +1,337 @@
-{
-  "messages": [
-    {
-      "avatarUrl": "",
-      "name": "Santhosh",
-      "time": "12:00",
-      "isEdited": false,
-      "reactions": ["👍", "😂"],
-      "isCurrentUser": true,
-      "message": "Hey! How are you doing today?"
-    },
-    {
-      "avatarUrl": "",
-      "name": "Santhosh",
-      "time": "12:01",
-      "isEdited": true,
-      "reactions": [],
-      "isCurrentUser": true,
-      "message": "I'm doing great, thanks for asking!"
-    },
-    {
-      "avatarUrl": "",
-      "name": "Alex",
-      "time": "12:02",
-      "isEdited": false,
-      "reactions": ["❤️"],
-      "isCurrentUser": false,
-      "message": "That's awesome! What are your plans for the weekend?"
-    },
-    {
-      "avatarUrl": "",
-      "name": "Alex",
-      "time": "12:03",
-      "isEdited": false,
-      "reactions": [],
-      "isCurrentUser": false,
-      "message": "I'm thinking of going hiking if the weather is nice."
-    },
-    {
-      "avatarUrl": "",
-      "name": "Santhosh",
-      "time": "12:10",
-      "isEdited": false,
-      "reactions": ["❤️"],
-      "isCurrentUser": true,
-      "message": "That's awesome! What are your plans for the weekend?"
-    },
-    {
-      "avatarUrl": "",
-      "name": "Santhosh",
-      "time": "12:13",
-      "isEdited": false,
-      "reactions": [],
-      "isCurrentUser": true,
-      "message": "I'm thinking of going hiking if the weather is nice."
+[
+  {
+    "uuid": "25f58f89-9639-4e96-9111-f5bd5cc82f46",
+    "text": "1",
+    "attachments": [
+      {
+        "uuid": "73edf78a-81bc-4a62-a195-311b44d6858c",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "width": 640,
+        "height": 120
+      }
+    ],
+    "sentAt": 1753212954253,
+    "updatedAt": 1753217093641,
+    "authorUuid": "you",
+    "reactions": [
+      {
+        "uuid": "131e6f92-0f7f-496e-b2f6-712d0cfb4f71",
+        "participantUuid": "1501d227-ebad-4764-9f46-f7dbbcbcf48f",
+        "value": "🇬🇭"
+      }
+    ]
+  },
+  {
+    "uuid": "a1d719ba-bfb6-4c8a-944c-8b201cdd857a",
+    "text": "Tumultus rerum clementia arto thema aliquam ad super tamen vir vicissitudo universe.",
+    "attachments": [],
+    "authorUuid": "e1c849b7-5b3b-4e2d-a39a-8726d3f943bb",
+    "reactions": [
+      {
+        "uuid": "e04f807e-b092-486d-b58f-136847499406",
+        "participantUuid": "e1c849b7-5b3b-4e2d-a39a-8726d3f943bb",
+        "value": "🇼🇸"
+      }
+    ],
+    "sentAt": 1753213433137,
+    "updatedAt": 1753215713425,
+    "replyToMessage": {
+      "uuid": "2911ba09-01f7-4ee7-b44a-43516cc6bc22",
+      "text": "Vorax ulciscor via.",
+      "attachments": [],
+      "authorUuid": "e0c258f3-0aba-4977-a1df-9c04af81f854",
+      "reactions": [
+        {
+          "uuid": "db2daae8-ce0c-402e-acce-f6e19572a0a0",
+          "participantUuid": "7907c761-a723-46e8-81f6-1b4a53f23d50",
+          "value": "🍤"
+        }
+      ],
+      "sentAt": 1753203231112,
+      "updatedAt": 1753208812411
     }
-  ]
-} 
+  },
+  {
+    "uuid": "083e272e-3a39-49ee-b517-fea574f177ee",
+    "text": "Odit tempore adimpleo spero video.",
+    "attachments": [],
+    "authorUuid": "ebedab0a-8167-41ba-86e1-55a4cb5841ec",
+    "reactions": [
+      {
+        "uuid": "8a110163-6a41-4a28-ab3e-b150ad3dca4e",
+        "participantUuid": "e1c849b7-5b3b-4e2d-a39a-8726d3f943bb",
+        "value": "😊"
+      }
+    ],
+    "sentAt": 1753214033213,
+    "updatedAt": 1753218204000
+  },
+  {
+    "uuid": "77e3a2eb-b7c6-42b8-b305-575f2a1d124a",
+    "text": "Vestigium adficio caste voluptatibus vorax amissio dolorem ultio aduro reiciendis acquiro celo omnis currus tempore adfero vomito denique averto deleo.",
+    "attachments": [],
+    "authorUuid": "e1c849b7-5b3b-4e2d-a39a-8726d3f943bb",
+    "reactions": [],
+    "sentAt": 1753214633292,
+    "updatedAt": 1753214633292
+  },
+  {
+    "uuid": "9045513e-bbd1-4e6d-985f-3c0b324c2b59",
+    "text": "Carcer textus calcar taedium tripudio celebrer victus desidero delinquo theologus surgo via adicio succedo officia clam tondeo ascisco suadeo umerus.",
+    "attachments": [],
+    "authorUuid": "e0c258f3-0aba-4977-a1df-9c04af81f854",
+    "reactions": [],
+    "sentAt": 1753215233369,
+    "updatedAt": 1753215233369
+  },
+  {
+    "uuid": "b5d7d9f7-9db2-4b3c-b04e-62f1493ea5ef",
+    "text": "Sapiente tabesco tui tribuo aliqua patria acceptus ara coma admitto tollo aufero tum uredo vorax veritas caelestis admoneo demulceo adopto depromo tum ratione terminatio terebro comis.",
+    "attachments": [],
+    "authorUuid": "7907c761-a723-46e8-81f6-1b4a53f23d50",
+    "reactions": [],
+    "sentAt": 1753215833441,
+    "updatedAt": 1753215833441
+  },
+  {
+    "uuid": "d31de1aa-4a9a-4a50-8103-2f39d88a121f",
+    "text": "Solutio abstergo animi numquam nostrum absconditus curia absorbeo delectus decerno defluo absque viscus ademptio minima acies enim crustulum vere denuo vulnus sollers valde angulus vulnero umbra praesentium vester crapula.",
+    "attachments": [],
+    "authorUuid": "e1c849b7-5b3b-4e2d-a39a-8726d3f943bb",
+    "reactions": [],
+    "sentAt": 1753216433537,
+    "updatedAt": 1753216433537,
+    "replyToMessage": {
+      "uuid": "b185d83d-42b7-4394-9cc8-9a6764cdc6dd",
+      "text": "Defessus voluntarius terra absconditus atavus subvenio cubitum deleo hic undique tabula teneo spargo minus demum tabella amet deporto curriculum vulgaris vinum fuga vado vorago comitatus tabgo comparo vilicus porro vulticulus adsum cerno nostrum qui ipsam deputo.",
+      "attachments": [],
+      "sentAt": 1753204117242,
+      "updatedAt": 1753210672678,
+      "authorUuid": "you",
+      "reactions": [
+        {
+          "uuid": "67da2fc4-383d-4f41-9f33-03a7e6064bf0",
+          "participantUuid": "54947aee-b650-4f9b-a5fd-98d7197352e4",
+          "value": "🇲🇴"
+        }
+      ]
+    }
+  },
+  {
+    "uuid": "6b19fbd2-a3fa-477e-86d3-8201d2ef6c5c",
+    "text": "Dens deleo adimpleo amitto confero vapulus absum terreo sustineo arx clam adipisci subnecto provident doloremque textilis.",
+    "attachments": [],
+    "authorUuid": "ebedab0a-8167-41ba-86e1-55a4cb5841ec",
+    "reactions": [
+      {
+        "uuid": "78a3e53a-a6fb-4a01-89db-f3a3e6ac5f17",
+        "participantUuid": "7907c761-a723-46e8-81f6-1b4a53f23d50",
+        "value": "😎"
+      }
+    ],
+    "sentAt": 1753217033631,
+    "updatedAt": 1753217963888
+  },
+  {
+    "uuid": "b929eaeb-2200-4411-8c30-478e1fec7b0a",
+    "text": "Ipsa desipio sit cur toties verecundia saepe considero artificiose caecus commemoro creptio supellex crudelis ex tamquam creptio alveus numquam celer vilicus cibo socius aperiam spiritus agnosco vobis causa amplitudo.",
+    "attachments": [],
+    "sentAt": 1753217544871,
+    "updatedAt": 1753219254241,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "510286fa-c1e8-4072-8510-bf560af3de11",
+    "text": "Ars defaeco bardus constans capio delibero clam totidem paens benevolentia tabula decens assentator iste.",
+    "attachments": [],
+    "authorUuid": "54947aee-b650-4f9b-a5fd-98d7197352e4",
+    "reactions": [],
+    "sentAt": 1753217633761,
+    "updatedAt": 1753217633761
+  },
+  {
+    "uuid": "a881f6b8-4aa6-48d7-ab0e-f6de3da3a3d2",
+    "text": "Hi",
+    "attachments": [
+      {
+        "uuid": "783e4f0a-f182-43ed-9cdb-072f8f2dd387",
+        "type": "image",
+        "url": "https://loremflickr.com/320/320?lock=7606201938781263",
+        "width": 320,
+        "height": 320
+      }
+    ],
+    "sentAt": 1753217698906,
+    "updatedAt": 1753217698906,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "5e26f7e1-4eb5-4e4b-9d9c-f6c11434eb4c",
+    "text": "Test",
+    "attachments": [
+      {
+        "uuid": "69c138f4-9d91-46ce-8a2f-a71b9f6b4a03",
+        "type": "image",
+        "url": "https://loremflickr.com/320/320?lock=8673873160298132",
+        "width": 320,
+        "height": 320
+      }
+    ],
+    "sentAt": 1753217795081,
+    "updatedAt": 1753217795081,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "7c769ff8-3a7f-47fa-8032-82f5f592d15b",
+    "text": "Send",
+    "attachments": [],
+    "sentAt": 1753217801172,
+    "updatedAt": 1753217801172,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "ec23c72a-47a7-4189-8067-608c23321605",
+    "text": "test",
+    "attachments": [],
+    "sentAt": 1753217869293,
+    "updatedAt": 1753217869293,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "e62f961d-b561-4bdf-86bb-a6d9f77179f2",
+    "text": "hey",
+    "attachments": [],
+    "sentAt": 1753218015658,
+    "updatedAt": 1753218015658,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "3f17f74e-3f44-433d-8322-f4298639f881",
+    "text": "Hey",
+    "attachments": [
+      {
+        "uuid": "bfb6a38e-0a81-4e25-bbeb-9a9bc35d78da",
+        "type": "image",
+        "url": "https://loremflickr.com/640/120?lock=7921587761131587",
+        "width": 640,
+        "height": 120
+      }
+    ],
+    "sentAt": 1753218038222,
+    "updatedAt": 1753218038222,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "1f72d4da-ba5e-44f9-b1f3-b50e877c4b9d",
+    "text": "Test message test message 😀",
+    "attachments": [
+      {
+        "uuid": "197720db-49f7-40a4-915c-0204153915d6",
+        "type": "image",
+        "url": "https://loremflickr.com/640/120?lock=7619205542758267",
+        "width": 640,
+        "height": 120
+      }
+    ],
+    "sentAt": 1753218057585,
+    "updatedAt": 1753218057585,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "8151bd21-5308-4cb2-8508-644de00403de",
+    "text": "Annus ventosus thorax audax appello vergo volo stips synagoga.",
+    "attachments": [],
+    "authorUuid": "0fe19b5b-4619-4d43-9d24-f47886f8f2e0",
+    "reactions": [],
+    "sentAt": 1753218234010,
+    "updatedAt": 1753218234010
+  },
+  {
+    "uuid": "0a035307-1833-4f36-80a6-1e6347deb2a8",
+    "text": "Creator defendo nesciunt deduco subvenio vallum audacia carcer tam tempore vulpes suadeo ipsa tabula clamo volubilis tactus.",
+    "attachments": [],
+    "authorUuid": "54947aee-b650-4f9b-a5fd-98d7197352e4",
+    "reactions": [],
+    "sentAt": 1753218834126,
+    "updatedAt": 1753218834126
+  },
+  {
+    "uuid": "85cb8210-61ef-4de7-935e-547c01bc2e37",
+    "text": "Lorem ipsum",
+    "attachments": [],
+    "sentAt": 1753218900780,
+    "updatedAt": 1753218900780,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "2f0528d6-8a35-43c6-866d-faf623b939ff",
+    "text": "Volubilis adnuo tardus tabernus amo auctor facilis abduco voluptas suscipio dicta pecto aeneus voluptate.",
+    "attachments": [],
+    "sentAt": 1753218906408,
+    "updatedAt": 1753218984159,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "7a280e89-0da3-4643-9486-47ef38ddbe3b",
+    "text": "Cernuus accommodo tergum blanditiis subseco custodia vel decerno vulnus decretum appello conor artificiose cupio defleo rerum appositus vacuus depereo vulticulus crudelis.",
+    "attachments": [
+      {
+        "uuid": "8cb3943c-0aba-456a-b763-60d5e6e67531",
+        "type": "image",
+        "url": "https://loremflickr.com/320/320?lock=3498790562139668",
+        "width": 320,
+        "height": 320
+      }
+    ],
+    "sentAt": 1753218911195,
+    "updatedAt": 1753219194218,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "79ed320b-e046-4827-895f-b198551e1229",
+    "text": "hey",
+    "attachments": [],
+    "sentAt": 1753219140559,
+    "updatedAt": 1753219140559,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "e644a6a8-c1db-482c-bb52-807b863b9c01",
+    "text": "Tribe chat test",
+    "attachments": [
+      {
+        "uuid": "543350df-5b22-419b-bbc6-37e279ca9db3",
+        "type": "image",
+        "url": "https://loremflickr.com/320/320?lock=3266988919010338",
+        "width": 320,
+        "height": 320
+      }
+    ],
+    "sentAt": 1753219161302,
+    "updatedAt": 1753219161302,
+    "authorUuid": "you",
+    "reactions": []
+  },
+  {
+    "uuid": "a588b83e-50c3-4964-bca0-ef14f3f4234a",
+    "text": "Sufficio demens terreo aegrotatio celebrer culpo ara minima tricesimus amita vicissitudo dicta annus adhuc cinis deprecator delicate versus torrens talis universe tumultus conspergo utrum vitiosus cognatus balbus contego adopto aspernatur trepide denego comburo.",
+    "attachments": [],
+    "authorUuid": "1501d227-ebad-4764-9f46-f7dbbcbcf48f",
+    "reactions": [],
+    "sentAt": 1753219434289,
+    "updatedAt": 1753219434289
+  }
+]

@@ -5,6 +5,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useParticipantStore } from "@/store/useParticipantStore";
 import { useChatStore } from "@/store/useChatStore";
 import { useRouter } from "expo-router";
+import dummyMessages from "../dummyMessages.json";
+import {TMessage} from "@/types";
+
 
 
 SplashScreen.preventAutoHideAsync();
@@ -16,17 +19,19 @@ export default function Index() {
   const initializeData = async () => {
     console.debug('Initializing data');
     try{
-      const [participantsResponse, messageResponse]  = await Promise.all([
-        fetch('https://dummy-chat-server.tribechat.com/api/participants/all'),
-         fetch('https://dummy-chat-server.tribechat.com/api/messages/all'),
-      ]);
+      //const dummy: TMessage[] =  (dummyMessages as TMessage[]);
+      const participantsResponse  = await fetch('https://dummy-chat-server.tribechat.com/api/participants/all');
+      const messageResponse= await fetch('https://dummy-chat-server.tribechat.com/api/messages/latest');
 
-      const [participants, messages] = await Promise.all([
-        participantsResponse.json(),
-        messageResponse.json(), 
-      ]);
+      const participants = await participantsResponse.json();
+      const messages = await messageResponse.json();
+      //const messages = dummy;
+
+
+      console.debug(messages.length);
       useParticipantStore.getState().setParticipants(participants);
-      useChatStore.getState().setMessages(messages);
+      //console.debug(messages)
+      useChatStore.getState().setMessages(messages.reverse());
     }catch(error){
       console.error('Error initializing data:', error);
     }finally{
@@ -50,6 +55,7 @@ export default function Index() {
         await AsyncStorage.setItem('sessionUuid', sessionUuid);
         await initializeData();
       }
+      //await AsyncStorage.setItem('sessionUuid', "");
     }catch(error){
       console.error('Error initializing app:', error);
     }finally{
@@ -63,12 +69,10 @@ export default function Index() {
   useEffect(()=>{
     console.debug("👋 App is mounting");
     initializeApp();
-  }, []); 
+  }, []);
 
 
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Splash screen</Text>
-    </View>
-  );
+  if (isLoading) return null;
+
+  return null;
 }

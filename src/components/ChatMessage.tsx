@@ -1,9 +1,8 @@
 import React from 'react';
-import type {  TMessage, TParticipant, ChatMessageProps } from '../types';
+import type { ChatMessageProps } from '../types';
 import SenderMessage from './SenderMessage';
 import ReceiverMessage from './ReceiverMessage';
 import { getGroupedReactions } from '@/utils/ChatMessageUtils';
-import { formatTime } from '@/utils/formatTime';
 
 const ChatMessage: React.FC<ChatMessageProps> = (props) => {
   const groupedReactions = getGroupedReactions(props.message.reactions || []);
@@ -12,9 +11,9 @@ const ChatMessage: React.FC<ChatMessageProps> = (props) => {
     return "No participant found";
   }
   if (props.participant.name.toLowerCase() === 'you') {
-    return <SenderMessage message={props.message} participant={props.participant} showHeader={props.showHeader} groupedReactions={groupedReactions}/>;
+    return <SenderMessage message={props.message} participant={props.participant} showHeader={props.showHeader} showDate={props.showDate} groupedReactions={groupedReactions}/>;
   } else {
-    return <ReceiverMessage message={props.message} participant={props.participant} showHeader={props.showHeader} groupedReactions={groupedReactions}/>;
+    return <ReceiverMessage message={props.message} participant={props.participant} showHeader={props.showHeader} showDate={props.showDate} groupedReactions={groupedReactions}/>;
   }
 };
 
