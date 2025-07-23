@@ -3,7 +3,7 @@
 Clone the repository and install dependencies for running the project:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/santosh-jorka/tribe-chat-app.git
 cd src
 npm install
 npm run start
